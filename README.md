@@ -1,4 +1,4 @@
-# GAPIT3_documentation
+# GAPIT3documentation
 
 
 GAPIT3 is currently on GitHub at the following link.    
