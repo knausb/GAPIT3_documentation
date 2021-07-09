@@ -5,6 +5,7 @@ vignette: >
   %\VignetteIndexEntry{my-vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+bibliography: GAPIT3doc.bib
 ---
 
 ```{r, include = FALSE}
@@ -27,4 +28,8 @@ data("iris")
 plot(iris$Sepal.Length, iris$Petal.Length)
 ```
 
+GAPIT3 publication [@zhang2010mixed].
+
+
+# References
 
