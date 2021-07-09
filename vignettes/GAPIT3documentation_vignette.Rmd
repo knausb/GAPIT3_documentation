@@ -1,5 +1,6 @@
 ---
 title: "GAPIT3documentation"
+author: "Brian J. Knaus"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{my-vignette}
@@ -18,6 +19,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(GAPIT3documentation)
+knitr::opts_chunk$set(fig.align = "center")
 ```
 
 
