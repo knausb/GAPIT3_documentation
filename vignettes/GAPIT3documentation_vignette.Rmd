@@ -1,0 +1,30 @@
+---
+title: "GAPIT3documentation"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+```{r setup}
+library(GAPIT3documentation)
+```
+
+
+## GAPIT3documentation
+
+```{r}
+data("iris")
+plot(iris$Sepal.Length, iris$Petal.Length)
+```
+
+
