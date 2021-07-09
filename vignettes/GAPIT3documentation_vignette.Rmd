@@ -33,5 +33,17 @@ plot(iris$Sepal.Length, iris$Petal.Length)
 GAPIT3 publication [@zhang2010mixed].
 
 
+Method                 | Method paper         | GAPIT Implementation
+-----------------------|----------------------|---------------------
+CompressionMLM (CMLM)  | @zhang2010mixed      | @lipka2012gapit
+gBLUP                  | @zhang2007use        | @lipka2012gapit
+Enriched CMLM          | @li2014enrichment    | @tang2016gapit
+SUPER                  | @wang2014super       | @tang2016gapit
+MLMM                   | @segura2012efficient | @wang2020gapit
+FarmCPU                | @liu2016iterative    | @wang2020gapit
+cBLUP and sBLUP        | @wang2018expanding   | @wang2020gapit
+BLINK                  | @huang2019blink      | @wang2020gapit
+
+
 # References
 
