@@ -25,12 +25,15 @@ knitr::opts_chunk$set(fig.align = "center")
 
 ## GAPIT3documentation
 
-```{r}
-data("iris")
-plot(iris$Sepal.Length, iris$Petal.Length)
+
+
+```{r gapit_fig, echo=FALSE, fig.cap="**Fig. X.** Association of each variant with the autoflower phenotype.", out.width = '40%'}
+knitr::include_graphics("gapit3.png")
 ```
 
-GAPIT3 publication [@zhang2010mixed].
+
+## How to cite GAPIT3
+
 
 
 Method                 | Method paper         | GAPIT Implementation
