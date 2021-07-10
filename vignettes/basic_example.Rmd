@@ -1,0 +1,48 @@
+---
+title: "Basic example"
+author: "Brian J. Knaus"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: GAPIT3doc.bib
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+```{r setup, include=FALSE}
+library(GAPIT3documentation)
+knitr::opts_chunk$set(fig.align = "center")
+```
+
+
+
+## A basic example
+
+
+```{r, eval=FALSE}
+system.file(package = "GAPIT3")
+
+#Step 1: Set data directory and import files
+myY <- read.table("mdp_traits.txt", head = TRUE)
+myG <- read.table("mdp_genotype_test.hmp.txt", head = FALSE)
+#Step 2: Run GAPIT
+myGAPIT <- GAPIT(
+Y=myY,
+G=myG,
+PCA.total=3
+)
+```
+
+
+
+
+
+
