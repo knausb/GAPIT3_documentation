@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```
 
 
-```{r setup}
+```{r setup, include=FALSE}
 library(GAPIT3documentation)
 knitr::opts_chunk$set(fig.align = "center")
 ```
@@ -26,14 +26,19 @@ knitr::opts_chunk$set(fig.align = "center")
 ## GAPIT3documentation
 
 
+**GAPIT3** is the **G**enome **A**ssociation **P**redicted **I**ntegrated Tool, a tool to help discern genetic contributions to the phenotpyes we observe.
 
-```{r gapit_fig, echo=FALSE, fig.cap="**Fig. X.** Association of each variant with the autoflower phenotype.", out.width = '40%'}
+
+```{r gapit_fig, echo=FALSE, fig.cap="**Fig. X.** GAPIT3 a tool to discern genetic contributions to the phenotype.", out.width = '40%'}
 knitr::include_graphics("gapit3.png")
 ```
 
 
 ## How to cite GAPIT3
 
+
+The GAPIT project has been the result of several publications on methodology and tehir implementation as software.
+Please cite these in order to acknowledge their contribution and to encourage future contribution.
 
 
 Method                 | Method paper         | GAPIT Implementation
@@ -46,6 +51,18 @@ MLMM                   | @segura2012efficient | @wang2020gapit
 FarmCPU                | @liu2016iterative    | @wang2020gapit
 cBLUP and sBLUP        | @wang2018expanding   | @wang2020gapit
 BLINK                  | @huang2019blink      | @wang2020gapit
+
+
+## Getting started
+
+Is GAPIT3 installed?
+
+
+## Tutorials
+
+
+A basic scenario
+
 
 
 # References
