@@ -53,9 +53,34 @@ cBLUP and sBLUP        | @wang2018expanding   | @wang2020gapit
 BLINK                  | @huang2019blink      | @wang2020gapit
 
 
-## Getting started
+## Installation
 
-Is GAPIT3 installed?
+A first question for a new user is whetehr GAPIT3 is already installed?
+You can query your system for the presence of GAPIT3 with the following command.
+
+
+```
+find.package("GAPIT3")
+```
+
+
+If GAPIT3 is installed, this command should return the location of the package.
+If it returns an error then you probably need to install it as follows.
+
+
+```
+devtools::install_github("jiabowang/GAPIT3",force=TRUE)
+```
+
+
+Decided you did not need this package after all?
+You can remove it as follows.
+
+
+```
+remove.packages(pkgs = "GAPIT3")
+```
+
 
 
 ## Tutorials
