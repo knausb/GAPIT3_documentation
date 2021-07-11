@@ -1,9 +1,9 @@
 ---
-title: "Basic example"
+title: "Basic_example"
 author: "Brian J. Knaus"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{basic_example}
+  %\VignetteIndexEntry{Basic_example}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 bibliography: GAPIT3doc.bib
