@@ -1,5 +1,13 @@
 
 
+#' GAPIT3documentation
+#'
+#' @return a list
+#' @export
+#'
+#' @examples
+#' GAPIT3documentation()
+#' 
 GAPIT3documentation <- function(){
   # cat("It works!\n")
   cat("Welcome to GAPIT3!\n")
