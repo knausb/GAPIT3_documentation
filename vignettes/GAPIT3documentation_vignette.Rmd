@@ -3,7 +3,7 @@ title: "GAPIT3documentation"
 author: "Brian J. Knaus"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{GAPIT3}
+  %\VignetteIndexEntry{GAPIT3documentation}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 bibliography: GAPIT3doc.bib

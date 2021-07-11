@@ -34,26 +34,28 @@ knitr::opts_chunk$set(fig.align = "center")
 #Step 1: Set data directory and import files
 # myY <- read.table("mdp_traits.txt", head = TRUE)
 # myG <- read.table("mdp_genotype_test.hmp.txt", head = FALSE)
-myY <- read.table(system.file("extdata", "mdp_traits.txt.gz",
-                              package = "GAPIT3documentation"),
-                  header = TRUE)
-myG <- read.table(system.file("extdata", 
-                              "mdp_genotype_test.hmp.txt.gz",
-                              package = "GAPIT3documentation"),
-                  header = FALSE)
 
-head(myY)
-myG[1:4, 1:9]
+myPhenoFile <- system.file("extdata", "mdp_traits.txt.gz",
+                    package = "GAPIT3documentation")
+myGenoFile <- system.file("extdata", "mdp_genotype_test.hmp.txt.gz",
+                    package = "GAPIT3documentation")
+
+myPhenotypes <- read.table(myPhenoFile, header = TRUE)
+myGenotypes  <- read.table(myGenoFile, header = FALSE)
+
+head(myPhenotypes)
+myGenotypes[1:4, 1:9]
 ```
 
 
 
 ```{r, eval=FALSE}
 #Step 2: Run GAPIT
+library(GAPIT3)
 myGAPIT <- GAPIT(
-Y=myY,
-G=myG,
-PCA.total=3
+  Y=myPhenotypes,
+  G=myGenotypes,
+  PCA.total=3
 )
 ```
 
