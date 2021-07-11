@@ -29,6 +29,7 @@ knitr::opts_chunk$set(fig.align = "center")
 
 ```{r, eval=FALSE}
 system.file(package = "GAPIT3")
+system.file("extdata", "mdp_traits.txt.gz", package = "GAPIT3documentation")
 
 #Step 1: Set data directory and import files
 myY <- read.table("mdp_traits.txt", head = TRUE)
