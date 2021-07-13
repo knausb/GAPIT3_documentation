@@ -72,6 +72,12 @@ If it returns an error then you probably need to install it as follows.
 devtools::install_github("jiabowang/GAPIT3",force=TRUE)
 ```
 
+You can install this documentation package as well.
+
+```
+devtools:install_github("knausb/GAPIT3documentation", build_vignettes = TRUE)
+```
+
 
 Decided you did not need this package after all?
 You can remove it as follows.
@@ -79,6 +85,7 @@ You can remove it as follows.
 
 ```
 remove.packages(pkgs = "GAPIT3")
+remove.packages(pkgs = "GAPIT3documentation")
 ```
 
 
