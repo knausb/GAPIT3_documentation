@@ -52,7 +52,8 @@ myGenotypes[1:4, 1:9]
 ```{r, eval=FALSE}
 #Step 2: Run GAPIT
 library(GAPIT3)
-myGAPIT <- GAPIT(
+myGAPIT <- GAPIT3documentation::GAPIT(
+#myGAPIT <- GAPIT(
   Y=myPhenotypes,
   G=myGenotypes,
   PCA.total=3

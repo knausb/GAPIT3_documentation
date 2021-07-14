@@ -1,12 +1,26 @@
 Package: GAPIT3documentation
 Title: Documentation for GAPIT3
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R: c(
     person(given = "Brian",
            family = "Knaus",
            role = c("aut", "cre"),
            email = "briank.lists@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           comment = c(ORCID = "YOUR-ORCID-ID")
+           ),
+    person(given = "Zhiwu",
+           family = "Zhang",
+           role = c("aut", "ccp"),
+           email = "briank.lists@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID")
+          ),
+    person(given = "Jiabo",
+           family = "Wang",
+           role = c("aut"),
+           email = "briank.lists@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID")
+          )
+    )
 Description: Documents the package GAPIT3.
 License: GPL (>= 3)
 Encoding: UTF-8
