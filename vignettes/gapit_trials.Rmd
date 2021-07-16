@@ -1,0 +1,220 @@
+---
+title: "GAPIT_trials"
+author: "Brian J. Knaus"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{GAPIT_trials}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: GAPIT3doc.bib
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+```{r setup, include=FALSE}
+library(GAPIT3documentation)
+knitr::opts_chunk$set(fig.align = "center")
+```
+
+
+Load example data.
+
+
+```{r, eval=TRUE}
+myPhenoFile <- system.file("extdata", "mdp_traits.txt.gz",
+                    package = "GAPIT3documentation")
+myGenoFile <- system.file("extdata", "mdp_genotype_test.hmp.txt.gz",
+                    package = "GAPIT3documentation")
+
+myPhenotypes <- read.table(myPhenoFile, header = TRUE)
+myGenotypes  <- read.table(myGenoFile, header = FALSE)
+
+head(myPhenotypes)
+myGenotypes[1:4, 1:9]
+```
+
+
+From GAPIT.R we have the first call to GAPIT.DP.
+
+```{r, eval=FALSE}
+DP = GAPIT.DP(G=G, GD=GD, GM=GM, KI=KI0, Z=Z, CV=CV,
+              CV.Inheritance = Para$CV.Inheritance, 
+              GP = GP,
+              GK = GK,
+              group.from = Para$group.from, 
+              group.to = Para$group.to,
+              group.by = Para$group.by,
+              DPP = Para$DPP, 
+              FDRcut = Para$FDRcut,
+              kinship.cluster = Para$kinship.cluster,
+              kinship.group = Para$kinship.group,
+              kinship.algorithm = Para$kinship.algorithm,
+              NJtree.group = Para$NJtree.group,
+              NJtree.type = Para$NJtree.type,
+              plot.bin = Para$plot.bin, 
+              PCA.col = Para$PCA.col,
+              PCA.3d = Para$PCA.3d,
+              sangwich.top = Para$sangwich.top,
+              sangwich.bottom = Para$sangwich.bottom,
+              LD=Para$LD,bin.from = Para$bin.from,
+              bin.to = Para$bin.to,
+              bin.by = Para$bin.by,
+              inclosure.from = Para$inclosure.from,
+              inclosure.to = Para$inclosure.to,
+              inclosure.by = Para$inclosure.by,
+              SNP.P3D = Para$SNP.P3D,
+              SNP.effect = Para$SNP.effect,
+              SNP.impute = Para$SNP.impute,
+              PCA.total = Para$PCA.total, 
+              SNP.fraction = Para$SNP.fraction, 
+              seed = Para$seed,
+              BINS = Para$BINS,
+              SNP.test=Para$SNP.test,
+              SNP.MAF= Para$SNP.MAF,
+              FDR.Rate = Para$FDR.Rate, 
+              SNP.FDR = Para$SNP.FDR,
+              SNP.permutation = Para$SNP.permutation,
+              opt = Para$opt,
+              SNP.CV = Para$SNP.CV,
+              SNP.robust = Para$SNP.robust,
+              Inter.Plot = Para$Inter.Plot,
+              Inter.type = Para$Inter.type,
+              file.from = Para$file.from, 
+              file.to = Para$file.to,
+              file.total= Para$file.total,
+              file.fragment = Para$file.fragment,
+              file.path = Para$file.path,
+              file.G = Para$file.G, 
+              file.Ext.G= Para$file.Ext.G,
+              file.GD = Para$file.GD,
+              file.GM = Para$file.GM, 
+              file.Ext.GD = Para$file.Ext.GD,
+              file.Ext.GM = Para$file.Ext.GM,
+              ngrid = Para$ngrid,
+              llim = Para$llim,
+              ulim = Para$ulim, 
+              esp = Para$esp,
+              Multi_iter = Para$Multi_iter,
+              num_regwas = Para$num_regwas,
+              LD.chromosome = Para$LD.chromosome,
+              LD.location = Para$LD.location,
+              LD.range = Para$LD.range,
+              QC = Para$QC,
+              GTindex = Para$GTindex,
+              cutOff = Para$cutOff,
+              Model.selection = Para$Model.selection,
+              output.numerical = Para$output.numerical,
+              Random.model = Para$Random.model,
+              Create.indicator = Para$Create.indicator,
+              QTN = Para$QTN, 
+              QTN.round = Para$QTN.round,
+              QTN.limit = Para$QTN.limit,
+              QTN.update = Para$QTN.update,
+              QTN.method = Para$QTN.method, 
+              Major.allele.zero = Para$Major.allele.zero,
+              method.GLM = Para$method.GLM,
+              method.sub = Para$method.sub,
+              method.sub.final = Para$method.sub.final,
+              method.bin = Para$method.bin,
+              bin.size = Para$bin.size,
+              bin.selection = Para$bin.selection,
+              memo = Para$memo,
+              Prior = Para$Prior,
+              ncpus = Para$ncpus,
+              maxLoop = Para$maxLoop,
+              threshold.output = Para$threshold.output,
+              WS = Para$WS,
+              alpha = Para$alpha,
+              maxOut = Para$maxOut,
+              QTN.position = Para$QTN.position,
+              converge = Para$converge,
+              iteration.output = Para$iteration.output,
+              acceleration = Para$acceleration,
+              iteration.method = Para$iteration.method,
+              PCA.View.output = Para$PCA.View.output,
+              output.hapmap = Para$output.hapmap, 
+              file.output = Para$file.output,
+              Geno.View.output = Para$Geno.View.output,
+              plot.style = Para$plot.style,
+              SUPER_GD = Para$SUPER_GD,
+              SUPER_GS = Para$SUPER_GS,
+              CG = Para$CG,
+              model = model
+)
+
+```
+
+
+
+
+GAPIT.DP calls GAPIT.Genotype
+
+
+```{r, eval=FALSE}
+
+myGenotype <- GAPIT.Genotype(G = G,
+                             GD = GD,
+                             GM = GM,
+                             KI = KI,
+                             PCA.total = PCA.total,
+                             kinship.algorithm = kinship.algorithm,
+                             SNP.fraction = SNP.fraction, 
+                             SNP.test = FALSE,
+                             file.path = file.path,
+                             file.from = file.from,
+                             file.to = file.to,
+                             file.total = file.total,
+                             file.fragment = file.fragment, 
+                             file.G = file.G,
+                             file.Ext.G = file.Ext.G,
+                             file.GD = file.GD, 
+                             file.GM = file.GM,
+                             file.Ext.GD = file.Ext.GD,
+                             file.Ext.GM = file.Ext.GM,
+                             SNP.MAF = SNP.MAF,
+                             FDR.Rate = FDR.Rate,
+                             SNP.FDR = SNP.FDR,
+                             SNP.effect = SNP.effect,
+                             SNP.impute = SNP.impute,
+                             NJtree.group = NJtree.group,
+                             NJtree.type = NJtree.type,
+                             LD.chromosome = LD.chromosome,
+                             LD.location = LD.location,
+                             LD.range = LD.range,
+                             GP = GP, 
+                             GK = GK,
+                             bin.size = NULL,
+                             inclosure.size = NULL, 
+                             sangwich.top = sangwich.top,
+                             sangwich.bottom = sangwich.bottom,
+                             GTindex = NULL,
+                             file.output = file.output,
+                             Create.indicator = Create.indicator,
+                             Major.allele.zero = Major.allele.zero,
+                             Geno.View.output = Geno.View.output,
+                             PCA.col=PCA.col,
+                             PCA.3d=PCA.3d
+                )
+
+
+```
+
+
+
+
+```{r}
+library(GAPIT3)
+
+#myGAPIT <- GAPIT()
+
+```
+
+
+
