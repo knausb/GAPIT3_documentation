@@ -1,0 +1,41 @@
+---
+title: "GAPIT3documentation glossary"
+author: "Brian J. Knaus"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{GAPIT3documentation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: GAPIT3doc.bib
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+```{r setup, include=FALSE}
+library(GAPIT3documentation)
+knitr::opts_chunk$set(fig.align = "center")
+```
+
+
+## GAPIT3documentation glossary
+
+**CV** Covariate matrix.
+
+**G** Genotype data in HapMap format.
+
+**GD** Genotype data in numeric format.
+
+**GM** Genotype map for numeric format.
+
+**KI** Kinship matrix - a sample by sample matrix where the cells describe the relationship among samples and high values represent similar samples.
+
+**Y** Phenotypic matrix - a sample by trait matrix.
+Sample names occur in the first column, traits begin in the second column.
+
+
