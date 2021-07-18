@@ -25,17 +25,77 @@ knitr::opts_chunk$set(fig.align = "center")
 
 ## GAPIT3documentation glossary
 
-**CV** Covariate matrix.
+**BLINK** Bayesian-information and Linkage- disequilibrium Iteratively Nested Keyway.
+
+**cBLUP and sBLUP** compressed best linear unbiased predictor.
+
+**CMLM** compressed mixed linear model.
+
+**CV** Covariate variables (fixed effects) such as population structure represented by the Q matrix (subpopulation proportion) or principal components (PCs).
+
+**EMMA** efficient mixed model association.
+
+**EMMAX** expedited efficient mixed model association.
+
+**Enriched CMLM** Enriched, compressed mixed linear model.
+
+**FarmCPU** Fixed and random model Circulating Probability Unification.
 
 **G** Genotype data in HapMap format.
 
+**gBLUP** Genomic Best Linear Unbiased Prediction
+
+**genomic BLUP / gBLUP** genomic Best Linear Unbiased Predictor
+
 **GD** Genotype data in numeric format.
+
+**GLM** General linear model
 
 **GM** Genotype map for numeric format.
 
+**GS** genomic prediction and selection.
+
+**GWAS** Genome-wide association studie.
+
+**HapMap format** 
+
+**Heritability**
+
 **KI** Kinship matrix - a sample by sample matrix where the cells describe the relationship among samples and high values represent similar samples.
+Random effects.
+
+**MAS** marker assisted selection.
+
+**MLM** mixed linear model.
+
+**MLMM** Multiple locus mixed linear model. (Forward and backward stepwise regression.)
+
+**Numeric format** 
+
+**P3D** population parameters previously determined.
+
+**Q** Population structure.
+
+
+
+**SNP** single-nucleotide polymorphism.
+
+**SUPER** Settlement of mixed linear model Under Progressively Exclusive Relationship.
+
+**sBLUP** Settlement of mixed linear model Under Progressively Exclusive Relationship best linear unbiased predictor. (**SUPER gBLUP**.)
 
 **Y** Phenotypic matrix - a sample by trait matrix.
 Sample names occur in the first column, traits begin in the second column.
+
+
+
+
+
+
+
+
+
+
+
 
 
