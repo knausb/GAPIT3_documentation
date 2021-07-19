@@ -210,7 +210,7 @@ myGenotype <- GAPIT.Genotype(G = G,
 
 
 ```{r}
-library(GAPIT3)
+# library(GAPIT3)
 
 #myGAPIT <- GAPIT()
 

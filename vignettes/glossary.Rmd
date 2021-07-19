@@ -1,9 +1,9 @@
 ---
-title: "GAPIT3documentation glossary"
+title: "GAPIT3documentation_glossary"
 author: "Brian J. Knaus"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{GAPIT3documentation}
+  %\VignetteIndexEntry{GAPIT3documentation_glossary}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 bibliography: GAPIT3doc.bib
@@ -48,6 +48,8 @@ knitr::opts_chunk$set(fig.align = "center")
 **genomic BLUP / gBLUP** genomic Best Linear Unbiased Predictor
 
 **GD** Genotype data in numeric format.
+
+**GI** 
 
 **GLM** General linear model
 
