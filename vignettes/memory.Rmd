@@ -1,0 +1,62 @@
+---
+title: "Memory_use"
+author: "Brian J. Knaus"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Memory_use}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: GAPIT3doc.bib
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+```{r setup, include=FALSE}
+library(GAPIT3documentation)
+knitr::opts_chunk$set(fig.align = "center")
+```
+
+
+```{r}
+myX <- as.data.frame(matrix(nrow = 1e2, ncol = 3e2))
+object.size(myX)
+```
+
+
+
+```{r}
+myData <- data.frame(matrix(nrow = 6, ncol = 3))
+colnames(myData) <- c("nrow", "ncol", "size")
+myData$nrow <- 10^seq(1, 6, by = 1)
+myData$ncol <- 300
+
+for(i in 1:nrow(myData)){
+  myX <- as.data.frame(matrix(nrow = myData$nrow[i], ncol = myData$ncol[i]))
+  myData$size[i] <- object.size(myX)
+}
+
+```
+
+
+```{r}
+library(ggplot2)
+
+myData$size <- myData$size/1e3
+
+p <- ggplot(myData, aes(x=nrow, y=size))
+p <- p + geom_point()
+p <- p + theme_bw()
+#p <- p + xlab("Variant count (rows)")
+#p <- p + ylab("RAM (KB)")
+p <- p + scale_x_continuous(name = "Variant count (rows)", trans = "log10")
+p <- p + scale_y_continuous(name = "RAM (KB)", trans = "log10")
+p
+```
+
+
