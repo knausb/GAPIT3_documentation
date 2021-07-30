@@ -23,3 +23,7 @@ https://doi.org/10.1093/bioinformatics/bts444
 GAPIT Version 2: An Enhanced Integrated Tool for Genomic Association and Prediction
 You Tang, Xiaolei Liu, Jiabo Wang, Meng Li, Qishan Wang, Feng Tian, Zhongbin Su, Yuchun Pan, Di Liu, Alexander E. Lipka, Edward S. Buckler, Zhiwu Zhang
 https://doi.org/10.3835/plantgenome2015.11.0120
+
+GAPIT Version 3: Boosting Power and Accuracy for Genomic Association and Prediction
+Jiabo Wang, Zhiwu Zhang
+https://doi.org/10.1101/2020.11.29.403170
