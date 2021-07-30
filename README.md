@@ -12,4 +12,14 @@ GAPIT3 is currently on GitHub at the following link.
 * [GAPIT](https://www.maizegenetics.net/gapit) at the Buckler Lab
 
 
+# GAPIT publications (select)
 
+GAPIT: genome association and prediction integrated tool 
+Alexander E. Lipka,  Feng Tian,  Qishan Wang,  Jason Peiffer,  Meng Li,  Peter J. Bradbury,  Michael A. Gore, Edward S. Buckler,  Zhiwu Zhang  
+Bioinformatics, Volume 28, Issue 18, 15 September 2012, Pages 2397–2399, 
+https://doi.org/10.1093/bioinformatics/bts444
+
+
+GAPIT Version 2: An Enhanced Integrated Tool for Genomic Association and Prediction
+You Tang, Xiaolei Liu, Jiabo Wang, Meng Li, Qishan Wang, Feng Tian, Zhongbin Su, Yuchun Pan, Di Liu, Alexander E. Lipka, Edward S. Buckler, Zhiwu Zhang
+https://doi.org/10.3835/plantgenome2015.11.0120
