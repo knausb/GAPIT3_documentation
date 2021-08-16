@@ -27,3 +27,4 @@ https://doi.org/10.3835/plantgenome2015.11.0120
 GAPIT Version 3: Boosting Power and Accuracy for Genomic Association and Prediction
 Jiabo Wang, Zhiwu Zhang
 https://doi.org/10.1101/2020.11.29.403170
+https://doi.org/10.1101/2020.11.29.403170
