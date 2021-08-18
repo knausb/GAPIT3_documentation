@@ -6,19 +6,19 @@ Authors@R: c(
            family = "Knaus",
            role = c("aut", "cre"),
            email = "briank.lists@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID")
+           comment = c(ORCID = "https://orcid.org/0000-0003-1665-4343")
            ),
     person(given = "Zhiwu",
            family = "Zhang",
            role = c("aut", "ccp"),
            email = "briank.lists@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID")
+           comment = c(ORCID = "https://orcid.org/0000-0002-5784-9684")
           ),
     person(given = "Jiabo",
            family = "Wang",
            role = c("aut"),
            email = "briank.lists@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID")
+           comment = c(ORCID = "https://orcid.org/0000-0002-4450-6690")
           )
     )
 Description: Documents the package GAPIT3.
