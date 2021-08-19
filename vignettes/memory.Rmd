@@ -52,11 +52,12 @@ myData$size <- myData$size/1e3
 p <- ggplot(myData, aes(x=nrow, y=size))
 p <- p + geom_point()
 p <- p + theme_bw()
-#p <- p + xlab("Variant count (rows)")
-#p <- p + ylab("RAM (KB)")
 p <- p + scale_x_continuous(name = "Variant count (rows)", trans = "log10")
 p <- p + scale_y_continuous(name = "RAM (KB)", trans = "log10")
 p
+
+p <- p + xlab("Variant count (rows)")
+p <- p + ylab("RAM (KB)")
 ```
 
 
