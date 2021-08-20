@@ -28,6 +28,8 @@ knitr::opts_chunk$set(fig.align = "center")
 
 
 ```{r, eval=TRUE}
+t1 <- Sys.time()
+
 # system.file("extdata", "mdp_traits.txt.gz", package = "GAPIT3documentation")
 # system.file("extdata", "mdp_genotype_test.hmp.txt.gz", package = "GAPIT3documentation")
 
@@ -49,19 +51,42 @@ myGenotypes[1:4, 1:9]
 
 
 
-```{r, eval=FALSE}
+```{r, eval=TRUE}
 #Step 2: Run GAPIT
 library(GAPIT3)
-myGAPIT <- GAPIT3documentation::GAPIT(
-#myGAPIT <- GAPIT(
-  Y=myPhenotypes,
+#myGAPIT <- GAPIT3documentation::GAPIT(
+#
+myGAPIT <- GAPIT(
+  Y=myPhenotypes[, 1:2],
   G=myGenotypes,
   PCA.total=3
 )
 ```
 
 
+## Return object
 
 
+```{r}
+class(myGAPIT)
+names(myGAPIT)
+lapply(myGAPIT, class)
+```
+
+
+## Outfiles
+
+
+```{r}
+getwd()
+list.files(path = ".", pattern = "^GAPIT.")
+```
+
+
+
+```{r}
+t99 <- Sys.time()
+t99 - t1
+```
 
 
