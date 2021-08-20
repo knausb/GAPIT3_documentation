@@ -1,0 +1,159 @@
+---
+title: "GAPIT3 Workflow"
+author: "Brian J. Knaus"
+date: "8/20/2021"
+output: 
+  html_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+```{r flow, echo=FALSE, fig.cap="A caption", out.width = '80%'}
+knitr::include_graphics("../inst/GAPITflow.png")
+```
+
+
+## GAPIT.DP()
+
+
+
+## GAPIT.Genotype()
+
+Description
+
+
+Details
+
+
+```{r}
+#Object: To unify genotype and calculate kinship and PC if required:
+#       1.For G data, convert it to GD and GI
+#       2.For GD and GM data, nothing change 
+#       3.Samling GD and create KI and PC
+#       4.Go through multiple files
+#       5.In any case, GD must be returned (for QC)
+#Output: GD, GI, GT, KI and PC
+#'
+#'
+#' return (list(G=G,GD=GD,GI=GI,GT=GT,hasGenotype=hasGenotype, genoFormat=genoFormat, KI=KI,PC=PC,byFile=byFile,fullGD=fullGD,Timmer=Timmer,Memory=Memory,SNP.QTN=SNP.QTN,chor_taxa=chor_taxa))
+#'
+#'
+GAPIT.Genotype <- function(x){
+  
+}
+
+```
+
+
+## GAPIT.Phenotype.View()
+
+
+```{r}
+`GAPIT.Phenotype.View` <- function(myY=NULL,traitname="_",memo="_"){
+# Object: Analysis for Phenotype data:Distribution of density,Accumulation,result:a pdf of the scree plot
+# myY:Phenotype data
+}
+```
+
+
+## GAPIT.Judge()
+
+
+```{r}
+`GAPIT.Judge`<-
+function(Y=Y,G=NULL,GD=NULL,KI=NULL,GM=NULL,group.to=group.to,group.from=group.from,sangwich.top=sangwich.top,sangwich.bottom=sangwich.bottom,kinship.algorithm=kinship.algorithm,PCA.total=PCA.total,model="MLM",SNP.test=TRUE){
+#Object: To judge Pheno and Geno data practicability
+}
+```
+
+
+## GAPIT.IC()
+
+
+```{r}
+`GAPIT.IC` <-
+function(DP=NULL){
+#Object: To Intermediate Components 
+}
+```
+
+
+## GAPIT.SS()
+
+
+```{r}
+`GAPIT.SS` <-
+function(DP=NULL,IC=NULL,buspred=FALSE,lmpred=TRUE){
+#Object: To Sufficient Statistics (SS) for GWAS and GS
+}
+```
+
+
+## GAPIT.Bus()
+
+
+```{r}
+`GAPIT.Bus`<-
+function(Y=NULL,CV=NULL,Z=NULL,GT=NULL,KI=NULL,GK=NULL,GD=NULL,GM=NULL,
+         WS=c(1e0,1e3,1e4,1e5,1e6,1e7),alpha=c(.01,.05,.1,.2,.3,.4,.5,.6,.7,.8,.9,1),
+         method=NULL,delta=NULL,vg=NULL,ve=NULL,LD=0.01,GTindex=NULL,
+         cutOff=0.01,Multi_iter=FALSE,num_regwas=10,Random.model=FALSE,FDRcut=FALSE,
+         p.threshold=NA,QTN.threshold=0.01,maf.threshold=0.03,
+         method.GLM="FarmCPU.LM",method.sub="reward",method.sub.final="reward",method.bin="static",
+         DPP=1000000,bin.size=c(5e5,5e6,5e7),bin.selection=seq(10,100,10),
+		 file.output=TRUE,opt="extBIC"){
+#Object: To license data by method
+#Output: Coresponding numerical value
+# This function is used to run multiple method, Thanks MLMM FarmCPU Blink to share program and code.
+}
+```
+
+
+## GAPIT.Main()
+
+
+```{r}
+`GAPIT.Main` <-
+function(Y,G=NULL,GD=NULL,GM=NULL,KI=NULL,Z=NULL,CV=NULL,CV.Inheritance=NULL,SNP.P3D=TRUE,GP=NULL,GK=NULL,
+                group.from=1000000 ,group.to=1,group.by=10,kinship.cluster="average", kinship.group='Mean',kinship.algorithm=NULL,DPP=50000,
+               	ngrid = 100, llin = -10, ulim = 10, esp = 1e-10,GAPIT3.output=TRUE,
+                file.path=NULL,file.from=NULL, file.to=NULL, file.total=NULL, file.fragment = 512, file.G=NULL, file.Ext.G=NULL,file.GD=NULL, file.GM=NULL, file.Ext.GD=NULL,file.Ext.GM=NULL,
+                SNP.MAF=0,FDR.Rate=1,SNP.FDR=1,SNP.effect="Add",SNP.impute="Middle",PCA.total=0,  GAPIT.Version=GAPIT.Version,
+                name.of.trait, GT = NULL, SNP.fraction = 1, seed = 123, BINS = 20,SNP.test=TRUE,SNP.robust="FaST",
+                LD.chromosome=NULL,LD.location=NULL,LD.range=NULL,model=model,
+                bin.from=10000,bin.to=5000000,bin.by=1000,inclosure.from=10,inclosure.to=1000,inclosure.by=10,
+                SNP.permutation=FALSE,SNP.CV=NULL,NJtree.group=NJtree.group,NJtree.type=NJtree.type,plot.bin=plot.bin,
+                genoFormat=NULL,hasGenotype=NULL,byFile=NULL,fullGD=NULL,PC=NULL,GI=NULL, Timmer = NULL, Memory = NULL,
+                sangwich.top=NULL,sangwich.bottom=NULL,QC=TRUE,GTindex=NULL,LD=0.05,
+                file.output=TRUE,cutOff=0.05, Model.selection = FALSE, Create.indicator = FALSE,
+				QTN=NULL, QTN.round=1,QTN.limit=0, QTN.update=TRUE, QTN.method="Penalty", Major.allele.zero = FALSE,
+        QTN.position=NULL,SUPER_GD=NULL,SUPER_GS=SUPER_GS,plot.style="Beach",CG=CG,chor_taxa=chor_taxa){
+#Object: To perform GWAS and GPS (Genomic Prediction or Selection)
+#Output: GWAS table (text file), QQ plot (PDF), Manhattan plot (PDF), genomic prediction (text file), and
+#        genetic and residual variance components
+#Authors: Zhiwu Zhang
+}
+```
+
+
+## GAPIT.ID()
+
+
+```{r}
+`GAPIT.ID` <- function(DP=NULL,IC=NULL,SS=NULL,RS=NULL,cutOff=0.01,
+DPP=100000,Create.indicator=FALSE,
+FDR.Rate = 1,QTN.position=NULL,plot.style="Oceanic",
+file.output=TRUE,SNP.MAF=0,CG=NULL,plot.bin=10^9 ){
+#Object: To Interpretation and Diagnoses 
+#Designed by Zhiwu Zhang
+#Writen by Jiabo Wang
+}
+```
+
+
