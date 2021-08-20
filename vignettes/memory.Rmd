@@ -45,6 +45,7 @@ for(i in 1:nrow(myData)){
 
 
 ```{r}
+#library(ggplot2)
 library(ggplot2)
 
 myData$size <- myData$size/1e3
