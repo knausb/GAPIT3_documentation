@@ -4,9 +4,11 @@ author: "Brian J. Knaus"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Basic_example}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
 bibliography: GAPIT3doc.bib
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include = FALSE}
@@ -52,8 +54,9 @@ myGenotypes[1:4, 1:9]
 ```{r, eval=FALSE}
 #Step 2: Run GAPIT
 library(GAPIT3)
-myGAPIT <- GAPIT3documentation::GAPIT(
-#myGAPIT <- GAPIT(
+#myGAPIT <- GAPIT3documentation::GAPIT(
+#
+myGAPIT <- GAPIT(
   Y=myPhenotypes,
   G=myGenotypes,
   PCA.total=3
