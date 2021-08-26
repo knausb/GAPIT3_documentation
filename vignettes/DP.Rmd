@@ -1,0 +1,40 @@
+---
+title: "GAPIT.DP"
+author: "Brian J. Knaus"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Basic_example}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+bibliography: GAPIT3doc.bib
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+```{r setup, include=FALSE}
+library(GAPIT3documentation)
+knitr::opts_chunk$set(fig.align = "center")
+```
+
+
+
+## GAPIT.DP
+
+
+```{r, eval=TRUE}
+t1 <- Sys.time()
+library(GAPIT3)
+
+#myDP <- GAPIT.DP()
+
+```
+
+

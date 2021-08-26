@@ -344,73 +344,73 @@ all.memo = NULL
 
 Description
 
-#' @param G = NULL
-#' @param GD = NULL
-#' @param GM = NULL
-#' @param KI = NULL
-#' @param kinship.algorithm = "Zhang"
-#' @param SNP.effect = "Add"
-#' @param SNP.impute = "Middle"
-#' @param PCA.total = 0
-#' @param PCA.col = NULL
-#' @param PCA.3d = PCA.3d
-#' @param seed = 123
-#' @param SNP.fraction  = 1
-#' @param file.path = NULL
-#' @param file.from = NULL
-#' @param file.to = NULL
-#' @param file.total = NULL
-#' @param file.fragment = 1000
-#' @param SNP.test = TRUE
-#' @param file.G  = NULL
-#' @param file.Ext.G  = NULL
-#' @param file.GD = NULL
-#' @param file.Ext.GD = NULL
-#' @param file.GM = NULL
-#' @param file.Ext.GM = NULL
-#' @param SNP.MAF = 0.05,
-#' @param FDR.Rate = 0.05
-#' @param SNP.FDR = 1
-#' @param Timmer = NULL
-#' @param Memory = NULL
-#' @param LD.chromosome = NULL
-#' @param LD.location = NULL
-#' @param LD.range = NULL
-#' @param SNP.CV = NULL
-#' @param GP = NULL
-#' @param GK = NULL
-#' @param GTindex = NULL
-#' @param bin.size = 1000
-#' @param inclosure.size = 100
-#' @param sangwich.top = NULL
-#' @param sangwich.bottom = NULL
-#' @param file.output = TRUE
-#' @param kinship.cluster = "average"
-#' @param NJtree.group = NULL
-#' @param NJtree.type = c("fan","unrooted")
-#' @param Create.indicator = FALSE
-#' @param Major.allele.zero = FALSE
-#' @param Geno.View.output = TRUE
-#'
-#'
-#' @return a list consisting of the following elements.
-#"
-#'
-#'
-#"
-G = G
-GD = GD
-GI = GI
-GT = GT
-hasGenotype = hasGenotype
-genoFormat = genoFormat KI = KI
-PC = PC
-byFile = byFile
-fullGD = fullGD
-Timmer = Timmer
-Memory = Memory
-SNP.QTN = SNP.QTN
-chor_taxa = chor_taxa
+#' @param G = NULL    
+#' @param GD = NULL    
+#' @param GM = NULL    
+#' @param KI = NULL    
+#' @param kinship.algorithm = "Zhang"    
+#' @param SNP.effect = "Add"    
+#' @param SNP.impute = "Middle"    
+#' @param PCA.total = 0    
+#' @param PCA.col = NULL    
+#' @param PCA.3d = PCA.3d    
+#' @param seed = 123    
+#' @param SNP.fraction  = 1    
+#' @param file.path = NULL    
+#' @param file.from = NULL    
+#' @param file.to = NULL    
+#' @param file.total = NULL    
+#' @param file.fragment = 1000    
+#' @param SNP.test = TRUE    
+#' @param file.G  = NULL    
+#' @param file.Ext.G  = NULL    
+#' @param file.GD = NULL    
+#' @param file.Ext.GD = NULL    
+#' @param file.GM = NULL    
+#' @param file.Ext.GM = NULL    
+#' @param SNP.MAF = 0.05    
+#' @param FDR.Rate = 0.05    
+#' @param SNP.FDR = 1    
+#' @param Timmer = NULL    
+#' @param Memory = NULL    
+#' @param LD.chromosome = NULL    
+#' @param LD.location = NULL    
+#' @param LD.range = NULL    
+#' @param SNP.CV = NULL    
+#' @param GP = NULL    
+#' @param GK = NULL    
+#' @param GTindex = NULL    
+#' @param bin.size = 1000    
+#' @param inclosure.size = 100    
+#' @param sangwich.top = NULL    
+#' @param sangwich.bottom = NULL    
+#' @param file.output = TRUE    
+#' @param kinship.cluster = "average"    
+#' @param NJtree.group = NULL    
+#' @param NJtree.type = c("fan","unrooted")    
+#' @param Create.indicator = FALSE    
+#' @param Major.allele.zero = FALSE    
+#' @param Geno.View.output = TRUE    
+#'    
+#'    
+#' @return a list consisting of the following elements.    
+#"    
+#'    
+#'    
+#'    
+G = G    
+GD = GD    
+GI = GI    
+GT = GT    
+hasGenotype = hasGenotype    
+genoFormat = genoFormat KI = KI    
+PC = PC    
+byFile = byFile    
+fullGD = fullGD    
+Timmer = Timmer    
+Memory = Memory    
+SNP.QTN = SNP.QTN    
+chor_taxa = chor_taxa    
 
 
 Details
