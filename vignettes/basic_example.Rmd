@@ -41,8 +41,9 @@ t1 <- Sys.time()
 
 myPhenoFile <- system.file("extdata", "mdp_traits.txt.gz",
                     package = "GAPIT3documentation")
-myGenoFile <- system.file("extdata", "mdp_genotype_test.hmp.txt.gz",
-                    package = "GAPIT3documentation")
+myGenoFile <- system.file("extdata",
+                          "mdp_genotype_test.hmp.txt.gz",
+                          package = "GAPIT3documentation")
 
 myPhenotypes <- read.table(myPhenoFile, header = TRUE)
 myGenotypes  <- read.table(myGenoFile, header = FALSE)
@@ -74,6 +75,29 @@ myGAPIT <- GAPIT(
 class(myGAPIT)
 names(myGAPIT)
 lapply(myGAPIT, class)
+```
+
+
+```{r}
+dim(myGAPIT$KI)
+class(myGAPIT$KI)
+
+theKin <- as.matrix(myGAPIT$KI[,-1])
+distance.matrix <- dist(theKin, upper = TRUE)
+hc <- hclust(distance.matrix) #, method = kinship.cluster)
+plot(hc)
+hcd <- as.dendrogram(hc)
+plot(hcd)
+
+
+plot(as.phylo(hc),
+     #type = NJtree.type[tr],
+     type = "fan",
+     #tip.color =type_col[clusMember],  
+     use.edge.length = TRUE, col = "gray80",
+     cex=0.8)
+
+par(mar = c(5, 4, 4, 2))
 ```
 
 
