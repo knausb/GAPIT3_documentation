@@ -165,9 +165,9 @@ knitr::include_graphics("../inst/GAPITflow.png")
 #Writen by Jiabo Wang
 #Last update: Novenber 3, 2016
 ##############################################################################################
-print("--------------------- Welcome to GAPIT ----------------------------")
-echo = TRUE
-all.memo = NULL
+#print("--------------------- Welcome to GAPIT ----------------------------")
+#echo = TRUE
+#all.memo = NULL
 
 }
 
@@ -341,81 +341,81 @@ all.memo = NULL
 
 
 ## GAPIT.Genotype()
-
-Description
-
-#' @param G = NULL
-#' @param GD = NULL
-#' @param GM = NULL
-#' @param KI = NULL
-#' @param kinship.algorithm = "Zhang"
-#' @param SNP.effect = "Add"
-#' @param SNP.impute = "Middle"
-#' @param PCA.total = 0
-#' @param PCA.col = NULL
-#' @param PCA.3d = PCA.3d
-#' @param seed = 123
-#' @param SNP.fraction  = 1
-#' @param file.path = NULL
-#' @param file.from = NULL
-#' @param file.to = NULL
-#' @param file.total = NULL
-#' @param file.fragment = 1000
-#' @param SNP.test = TRUE
-#' @param file.G  = NULL
-#' @param file.Ext.G  = NULL
-#' @param file.GD = NULL
-#' @param file.Ext.GD = NULL
-#' @param file.GM = NULL
-#' @param file.Ext.GM = NULL
-#' @param SNP.MAF = 0.05,
-#' @param FDR.Rate = 0.05
-#' @param SNP.FDR = 1
-#' @param Timmer = NULL
-#' @param Memory = NULL
-#' @param LD.chromosome = NULL
-#' @param LD.location = NULL
-#' @param LD.range = NULL
-#' @param SNP.CV = NULL
-#' @param GP = NULL
-#' @param GK = NULL
-#' @param GTindex = NULL
-#' @param bin.size = 1000
-#' @param inclosure.size = 100
-#' @param sangwich.top = NULL
-#' @param sangwich.bottom = NULL
-#' @param file.output = TRUE
-#' @param kinship.cluster = "average"
-#' @param NJtree.group = NULL
-#' @param NJtree.type = c("fan","unrooted")
-#' @param Create.indicator = FALSE
-#' @param Major.allele.zero = FALSE
-#' @param Geno.View.output = TRUE
-#'
-#'
-#' @return a list consisting of the following elements.
-#"
-#'
-#'
-#"
-G = G
-GD = GD
-GI = GI
-GT = GT
-hasGenotype = hasGenotype
-genoFormat = genoFormat KI = KI
-PC = PC
-byFile = byFile
-fullGD = fullGD
-Timmer = Timmer
-Memory = Memory
-SNP.QTN = SNP.QTN
-chor_taxa = chor_taxa
-
-
-Details
-
-
+#'    
+#' Description    
+#'     
+#' @param G = NULL    
+#' @param GD = NULL    
+#' @param GM = NULL    
+#' @param KI = NULL    
+#' @param kinship.algorithm = "Zhang"    
+#' @param SNP.effect = "Add"    
+#' @param SNP.impute = "Middle"    
+#' @param PCA.total = 0    
+#' @param PCA.col = NULL    
+#' @param PCA.3d = PCA.3d    
+#' @param seed = 123    
+#' @param SNP.fraction  = 1    
+#' @param file.path = NULL    
+#' @param file.from = NULL    
+#' @param file.to = NULL    
+#' @param file.total = NULL    
+#' @param file.fragment = 1000    
+#' @param SNP.test = TRUE    
+#' @param file.G  = NULL    
+#' @param file.Ext.G  = NULL    
+#' @param file.GD = NULL    
+#' @param file.Ext.GD = NULL    
+#' @param file.GM = NULL    
+#' @param file.Ext.GM = NULL    
+#' @param SNP.MAF = 0.05    
+#' @param FDR.Rate = 0.05    
+#' @param SNP.FDR = 1    
+#' @param Timmer = NULL    
+#' @param Memory = NULL    
+#' @param LD.chromosome = NULL    
+#' @param LD.location = NULL    
+#' @param LD.range = NULL    
+#' @param SNP.CV = NULL    
+#' @param GP = NULL    
+#' @param GK = NULL    
+#' @param GTindex = NULL    
+#' @param bin.size = 1000    
+#' @param inclosure.size = 100    
+#' @param sangwich.top = NULL    
+#' @param sangwich.bottom = NULL    
+#' @param file.output = TRUE    
+#' @param kinship.cluster = "average"    
+#' @param NJtree.group = NULL    
+#' @param NJtree.type = c("fan","unrooted")    
+#' @param Create.indicator = FALSE    
+#' @param Major.allele.zero = FALSE    
+#' @param Geno.View.output = TRUE    
+#'    
+#'    
+#" Details    
+#'    
+#'    
+#' @return a list consisting of the following elements.    
+#"    
+#"    
+#" G = G    
+#" GD = GD    
+#" GI = GI    
+#" GT = GT    
+#" hasGenotype = hasGenotype    
+#" genoFormat = genoFormat    
+#" KI = KI    
+#" PC = PC    
+#" byFile = byFile    
+#" fullGD = fullGD    
+#" Timmer = Timmer    
+#" Memory = Memory    
+#" SNP.QTN = SNP.QTN    
+#" chor_taxa = chor_taxa    
+#"     
+#"     
+#"     
 ```{r}
 #Object: To unify genotype and calculate kinship and PC if required:
 #       1.For G data, convert it to GD and GI
@@ -436,9 +436,19 @@ GAPIT.Genotype <- function(x){
 ```
 
 
-## GAPIT.Phenotype.View()
-
-
+## GAPIT.Phenotype.View()    
+#'     
+#' Distribution of density,Accumulation,result:a pdf of the scree plot    
+#'     
+#' myY = NULL    
+#' traitname = "_"    
+#' memo = "_"    
+#'     
+#'     
+#' @return    
+#'     a string (function creates graphics)    
+#'     
+#'    
 ```{r}
 `GAPIT.Phenotype.View` <- function(myY = NULL,traitname = "_",memo = "_"){
 # Object: Analysis for Phenotype data:Distribution of density,Accumulation,result:a pdf of the scree plot
@@ -448,8 +458,16 @@ GAPIT.Genotype <- function(x){
 
 
 ## GAPIT.Judge()
-
-
+#'     
+#' @param DP=NULL    
+#'     
+#'    
+#' @return    
+#' A list of    
+#' group.to = group.to    
+#' group.from = group.from    
+#'    
+#'    
 ```{r}
 `GAPIT.Judge`<-
 function(Y = Y,G = NULL,GD = NULL,KI = NULL,GM = NULL,group.to = group.to,group.from = group.from,sangwich.top = sangwich.top,sangwich.bottom = sangwich.bottom,kinship.algorithm = kinship.algorithm,PCA.total = PCA.total,model = "MLM",SNP.test = TRUE){
@@ -459,8 +477,41 @@ function(Y = Y,G = NULL,GD = NULL,KI = NULL,GM = NULL,group.to = group.to,group.
 
 
 ## GAPIT.IC()
-
-
+#'    
+#' Intermediate Components     
+#'    
+#'    
+#' @param DP=NULL    
+#'    
+#'    
+#'    
+#' @return    
+#` a list of either    
+#'    
+#' Y = comY       
+#' GT = GT       
+#' PCA = comCV       
+#' K = DP\$KI       
+#' GD = comGD       
+#' GM = DP\$GM       
+#' myallCV = CV       
+#' myallGD = GD    
+#'    
+#' or    
+#'    
+#'     
+#' Y = comY       
+#' GT = GT       
+#' PCA = comCV    
+#' K = DP\$KI    
+#' GD = comGD    
+#' GM = DP\$GM    
+#' myallCV = CV    
+#' myallGD = GD    
+#' myallY = Y    
+#'    
+#'    
+#'    
 ```{r}
 `GAPIT.IC` <-
 function(DP = NULL){
@@ -472,6 +523,41 @@ function(DP = NULL){
 ## GAPIT.SS()
 
 
+
+#'    
+#' Sufficient Statistics (SS) for GWAS and GS    
+#'    
+#'    
+#' @param DP = NULL    
+#' @param IC=NULL    
+#' @param buspred=FALSE    
+#' @param lmpred=TRUE    
+#'    
+
+#'    
+#' @return    
+#'    
+#` a list containing    
+#'    
+#' GWAS=GWAS       
+#'        Pred=Pred       
+#'        FDR=NULL       
+#'        Power=NULL       
+#'        Power.Alpha=NULL       
+#'        alpha=NULL       
+#'        h2=h2       
+#'        va=va       
+#'        ve=ve       
+#'        Compression=Compression       
+#'        mc=mc       
+#'        bc=bc       
+#'        mp=mp       
+#'        TV=gapitMain$TV       
+#'        Timmer=Timmer       
+#'        Memory=Memory    
+#'    
+#'    
+#'    
 ```{r}
 `GAPIT.SS` <-
 function(DP = NULL,IC = NULL,buspred = FALSE,lmpred = TRUE){
@@ -482,6 +568,59 @@ function(DP = NULL,IC = NULL,buspred = FALSE,lmpred = TRUE){
 
 ## GAPIT.Bus()
 
+function is used to run multiple method, Thanks MLMM FarmCPU Blink to share program and code
+
+
+
+#' @param Y=NULL    
+#' @param CV=NULL    
+#' @param Z=NULL    
+#' @param GT=NULL    
+#' @param KI=NULL    
+#' @param GK=NULL    
+#' @param GD=NULL    
+#' @param GM=NULL    
+#' @param WS=c(1e0,1e3,1e4,1e5,1e6,1e7)    
+#' @param alpha=c(.01,.05,.1,.2,.3,.4,.5,.6,.7,.8,.9,1)    
+#' @param method=NULL    
+#' @param delta=NULL    
+#' @param vg=NULL    
+#' @param ve=NULL    
+#' @param LD=0.01    
+#' @param GTindex=NULL    
+#' @param cutOff=0.01    
+#' @param Multi_iter=FALSE    
+#' @param num_regwas=10    
+#' @param Random.model=FALSE    
+#' @param FDRcut=FALSE    
+#' @param p.threshold=NA    
+#' @param QTN.threshold=0.01    
+#' @param maf.threshold=0.03    
+#' @param method.GLM="FarmCPU.LM"    
+#' @param method.sub="reward"    
+#' @param method.sub.final="reward"    
+#' @param method.bin="static"    
+#' @param DPP=1000000    
+#' @param bin.size=c(5e5, 5e6,5e7)    
+#' @param bin.selection=seq(10,100,10)    
+#' @param file.output=TRUE    
+#' @param opt="extBIC"    
+#'    
+#'    
+#'    
+#' @return    
+#' a list consisting of the following elements    
+#'    
+#' GWAS=GWAS     
+#' GPS=GPS     
+#' REMLs=REMLs     
+#' vg=vg     
+#' ve=ve     
+#' delta=delta     
+#' GVs=GR$GVs     
+#' seqQTN=seqQTN    
+#'    
+#'
 
 ```{r}
 `GAPIT.Bus`<-
@@ -528,10 +667,27 @@ function(Y = NULL,CV = NULL,Z = NULL,GT = NULL,KI = NULL,GK = NULL,GD = NULL,GM 
 
 #'    
 #' @return a list consisting of the following elements.    
-#' 
-#' 
-#' 
-#' 
+#'      
+#'     Timmer = Timmer,    
+#'     Compression = Compression,    
+#'     kinship.optimum = theK.back,     
+#'     kinship = KI,    
+#'     PC = PC,    
+#'     GWAS = PWI.Filtered,    
+#'     GPS = GPS,    
+#'     Pred = Pred,    
+#'     REMLs = Compression[count,4],    
+#'     Timmer = Timmer,    
+#'     Memory = Memory,    
+#'     SUPER_GD = SUPER_GD,    
+#'     P = ps,    
+#'     effect.snp = DTS[,7],    
+#'     effect.cv = p3d$effect.cv,    
+#'     h2 = h2.opt,    
+#'     TV = TV    
+#'     
+#'     
+#'     
 
 
 
@@ -637,54 +793,54 @@ function(Y = NULL,CV = NULL,Z = NULL,GT = NULL,KI = NULL,GK = NULL,GD = NULL,GM 
 Description
 To Interpretation and Diagnoses 
 
-#' @param G = NULL
-#' @param GD = NULL
-#' @param GM = NULL
-#' @param KI = NULL
-#' @param kinship.algorithm = "Zhang"
-#' @param SNP.effect = "Add"
-#' @param SNP.impute = "Middle"
-#' @param PCA.total = 0
-#' @param PCA.col = NULL
-#' @param PCA.3d = PCA.3d
-#' @param seed = 123
-#' @param SNP.fraction  = 1
-#' @param file.path = NULL
-#' @param file.from = NULL
-#' @param file.to = NULL
-#' @param file.total = NULL
-#' @param file.fragment = 1000
-#' @param SNP.test = TRUE
-#' @param file.G  = NULL
-#' @param file.Ext.G  = NULL
-#' @param file.GD = NULL
-#' @param file.Ext.GD = NULL
-#' @param file.GM = NULL
-#' @param file.Ext.GM = NULL
-#' @param SNP.MAF = 0.05,
-#' @param FDR.Rate = 0.05
-#' @param SNP.FDR = 1
-#' @param Timmer = NULL
-#' @param Memory = NULL
-#' @param LD.chromosome = NULL
-#' @param LD.location = NULL
-#' @param LD.range = NULL
-#' @param SNP.CV = NULL
-#' @param GP = NULL
-#' @param GK = NULL
-#' @param GTindex = NULL
-#' @param bin.size = 1000
-#' @param inclosure.size = 100
-#' @param sangwich.top = NULL
-#' @param sangwich.bottom = NULL
-#' @param file.output = TRUE
-#' @param kinship.cluster = "average"
-#' @param NJtree.group = NULL
-#' @param NJtree.type = c("fan","unrooted")
-#' @param Create.indicator = FALSE
-#' @param Major.allele.zero = FALSE
-#' @param Geno.View.output = TRUE
-#'
+#' @param G = NULL    
+#' @param GD = NULL    
+#' @param GM = NULL    
+#' @param KI = NULL    
+#' @param kinship.algorithm = "Zhang"    
+#' @param SNP.effect = "Add"    
+#' @param SNP.impute = "Middle"    
+#' @param PCA.total = 0    
+#' @param PCA.col = NULL    
+#' @param PCA.3d = PCA.3d    
+#' @param seed = 123    
+#' @param SNP.fraction  = 1    
+#' @param file.path = NULL    
+#' @param file.from = NULL    
+#' @param file.to = NULL    
+#' @param file.total = NULL    
+#' @param file.fragment = 1000    
+#' @param SNP.test = TRUE    
+#' @param file.G  = NULL    
+#' @param file.Ext.G  = NULL    
+#' @param file.GD = NULL    
+#' @param file.Ext.GD = NULL    
+#' @param file.GM = NULL    
+#' @param file.Ext.GM = NULL    
+#' @param SNP.MAF = 0.05,    
+#' @param FDR.Rate = 0.05    
+#' @param SNP.FDR = 1    
+#' @param Timmer = NULL    
+#' @param Memory = NULL    
+#' @param LD.chromosome = NULL    
+#' @param LD.location = NULL    
+#' @param LD.range = NULL    
+#' @param SNP.CV = NULL    
+#' @param GP = NULL    
+#' @param GK = NULL    
+#' @param GTindex = NULL    
+#' @param bin.size = 1000    
+#' @param inclosure.size = 100    
+#' @param sangwich.top = NULL    
+#' @param sangwich.bottom = NULL    
+#' @param file.output = TRUE    
+#' @param kinship.cluster = "average"    
+#' @param NJtree.group = NULL    
+#' @param NJtree.type = c("fan","unrooted")    
+#' @param Create.indicator = FALSE    
+#' @param Major.allele.zero = FALSE    
+#' @param Geno.View.output = TRUE    
+#'    
 #'
 
 
@@ -700,13 +856,13 @@ To Interpretation and Diagnoses
     
     
     
-#'
-#'
-#' Details
-#'
-#' @author Jiabo Wang.
-#'
-#' 
+#'    
+#'    
+#' Details    
+#'    
+#' @author Jiabo Wang.    
+#'    
+#'     
 ```{r}
 `GAPIT.ID` <- function(
   DP = NULL,
