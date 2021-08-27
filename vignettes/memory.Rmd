@@ -4,10 +4,14 @@ author: "Brian J. Knaus"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Memory_use}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
 bibliography: GAPIT3doc.bib
+editor_options: 
+  chunk_output_type: console
 ---
+
+
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(

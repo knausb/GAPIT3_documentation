@@ -3,7 +3,7 @@ title: "GAPIT.DP"
 author: "Brian J. Knaus"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Basic_example}
+  %\VignetteIndexEntry{GAPIT.DP}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 bibliography: GAPIT3doc.bib

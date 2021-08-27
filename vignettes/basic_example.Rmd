@@ -54,24 +54,46 @@ myGenotypes[1:4, 1:9]
 
 
 
-```{r, eval=TRUE}
+```{r, eval=FALSE}
 #Step 2: Run GAPIT
+#devtools::install_github("jiabowang/GAPIT3",force=TRUE)
 library(GAPIT3)
+#devtools::load_all("~/gits/GAPIT3/")
 #myGAPIT <- GAPIT3documentation::GAPIT(
 #
+
+myGAPIT <- GAPIT3::GAPIT(
+    G=myGenotypes,
+    file.output = FALSE,
+)
+names(myGAPIT)
+myGAPIT$GD[1:4, 1:6]
+myGAPIT$G[1:4, 1:6]
+myGAPIT$kinship[1:4, 1:6]
+myGAPIT$chor_taxa
+
+
 myGAPIT <- GAPIT(
 #  Y=myPhenotypes,
   Y=myPhenotypes[, 1:2],
   G=myGenotypes,
-  PCA.total=3
+  PCA.total=3,
+  file.output = FALSE,
 )
+names(myGAPIT)
+myGAPIT$GD[1:4, 1:6]
+myGAPIT$G[1:4, 1:6]
+myGAPIT$kinship[1:4, 1:6]
+myGAPIT$chor_taxa
+
+
 ```
 
 
 ## Return object
 
 
-```{r}
+```{r, eval = TRUE}
 class(myGAPIT)
 names(myGAPIT)
 lapply(myGAPIT, class)
