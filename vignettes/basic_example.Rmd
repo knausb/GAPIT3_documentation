@@ -93,14 +93,14 @@ myGAPIT$chor_taxa
 ## Return object
 
 
-```{r, eval = TRUE}
+```{r, eval=FALSE}
 class(myGAPIT)
 names(myGAPIT)
 lapply(myGAPIT, class)
 ```
 
 
-```{r}
+```{r, eval=FALSE}
 dim(myGAPIT$KI)
 class(myGAPIT$KI)
 
@@ -126,7 +126,7 @@ par(mar = c(5, 4, 4, 2))
 ## Outfiles
 
 
-```{r}
+```{r, eval=FALSE}
 getwd()
 list.files(path = ".", pattern = "^GAPIT.")
 ```
