@@ -875,7 +875,12 @@ To Interpretation and Diagnoses
 
 #'    
 #'    
-#' @return a list consisting of the following elements.    
+#' @return a string    
+#'    
+#'    
+
+
+
 #' DP = NULL,    
 #' IC = NULL,    
 #' SS = NULL,    
