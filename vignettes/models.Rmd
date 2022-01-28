@@ -1,0 +1,203 @@
+---
+title: "GAPIT3 models"
+author: "Brian J. Knaus"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Basic_example}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+bibliography: GAPIT3doc.bib
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+```{r setup, include=FALSE}
+#library(GAPIT3documentation)
+knitr::opts_chunk$set(fig.align = "center")
+```
+
+
+
+## T-test
+
+
+$$
+y = s_{i} + \epsilon_{dnorm} 
+$$
+
+
+- $y$ is a vector of phenotypic measurements
+- $s_{i}$ genotypes
+- $\epsilon_{dnorm}$ is normally distributed error
+
+
+The t-test is not implemented in GAPIT3, but is provided as a conceptual starting point for the more complex models that are implemented in GAPIT3.
+The t-test is a good starting point because the models implemented in GAPIT3 can be seen as models the build on the t-test by adding parameters.
+
+
+## GLM
+
+The **G**eneral **L**inear **M**odel (not to be confused with the generalized linear model)
+
+$$
+y = s_{i} + Q + \epsilon_{dnorm} 
+$$
+
+- $y$ is a vector of phenotypic measurements
+- $s_{i}$ genotypes
+- $Q$ indicates population structure (a categorical indicator) 
+- $\epsilon_{dnorm}$ is normally distributed error
+
+
+The $Q$ matrix may be obtained from clustering algorithms such as 'admixture', 'DAPC', 'kmeans', 'STRUCTURE', or '[fastSTRUCTURE](https://rajanil.github.io/fastStructure/).'
+
+
+## MLM
+
+The **M**ixed **L**inear **M**odel
+
+
+$$
+y = s_{i} + Q + K + \epsilon_{dnorm} 
+$$
+
+- $y$ is a vector of phenotypic measurements
+- $s_{i}$ genotypes
+- $Q$ indicates population structure
+- $K$ is a kinship matrix, a sample by sample matrix indicating relatedness among samples (a random effect or cofactor)
+- $\epsilon_{dnorm}$ is normally distributed error
+
+
+The MLM model is 'mixed' in that it incorporates 'fixed effects' (population structure, $Q$) and 'random effects' (kinship, $K$) into the model.
+
+
+## MLMM
+
+**M**ultiple **L**oci **M**ixed **M**odel
+
+$$
+y = s_{i} + S + Q + K + \epsilon_{dnorm} 
+$$
+
+- $y$ is a vector of phenotypic measurements
+- $s_{i}$ genotypes
+- $S$ 'pseudo QTN' *- better get more info here*
+- $Q$ indicates population structure
+- $K$ is a kinship matrix, a sample by sample matrix indicating relatedness among samples (a random effect or cofactor)
+- $\epsilon_{dnorm}$ is normally distributed error
+
+
+Uses forward and backward stepwise regression
+
+**Iterative!**
+
+## SUPER
+
+$$
+y = s_{i} + Q + K + \epsilon_{dnorm} 
+$$
+
+- $y$ is a vector of phenotypic measurements
+- $s_{i}$ genotypes
+- $Q$ indicates population structure
+- $K$ is a kinship matrix, a sample by sample matrix indicating relatedness among samples (a random effect or cofactor)
+- $\epsilon_{dnorm}$ is normally distributed error
+
+
+$K$ is derived from associated markers,
+The 'association' is determined by selecting markers that exhibit low linkage disequilibrium (a form of correlation) with markers of interest.
+The value of 'low' is specified by the user.
+
+**Iterative!**    
+**Linkage disequilibrium**
+
+SUPER is an advanced version of FaST-Select,
+The major difference between SUPER and FaST-Select is that SUPER uses bin approach to select associated markers.
+
+
+## FarmCPU
+
+Fixed and random model Circulating Probability Unification
+
+
+$$
+y = s_{i} + S + \epsilon_{dnorm} \\
+y = K + \epsilon_{dnorm} 
+$$
+
+FarmCPU completely removes the confounding among kinship and markers by using a fixed effect model without a kinship derived either from all markers, or associated markers. 
+Instead, kinship is derived from associated markers is used to select more associated markers using a maximum likelihood method.
+
+
+This process overcome the model overfitting problems of stepwise regression. FarmCPU uses both fixed effect model and the
+random effect model iteratively
+
+**Iterative!**    
+**Linkage disequilibrium**
+
+
+## BLINK
+
+
+Bayesian-information and Linkage-disequilibrium Iteratively Nested Keyway
+
+
+$$
+y = s_{i} + S + \epsilon_{dnorm} \\
+y = S + \epsilon_{dnorm} 
+$$
+
+
+The random effect model in FarmCPU to select associated markers using maximum likelihood method remains a high computing cost for large number of individuals. 
+BLINK approximates the maximum likelihood using Bayesian Information Content (BIC) [BJK: Bayesian Information Criterion] in a fixed effect model to decrease the computational burden.
+
+**Iterative!**    
+**Linkage disequilibrium**
+
+
+---
+
+Other major options
+
+**Compressed MLM (CMLM)** individuals are replaced by groups determined by statistical clustering.
+
+The optimal compression level (group number) is determined by a series of mixed models.
+The user specifies the search range and interval (group.from, group.to and group.by).
+Otherwise, MLM.
+
+The mixed linear model (MLM) is an extreme case of CMLM where each individual is considered it's own group.
+The general linear model (GLM) is another extreme case of CMLM where all individuals are considered to be part of one group.
+
+
+Enriched CMLM (ECMLM),
+
+
+**P3D/EMMAx**
+In addition to implementing compression, GAPIT uses EMMAx/P3D1,17 to reduce computing time for MLM, CMLM, ECMLM, and SUPER.
+If specified, the additive genetic (σ2a) and residual (σ2e) variance components will be estimated prior to conducting GWAS. 
+These estimates are then used for each SNP where a mixed model is fitted.
+
+
+
+
+
+
+## Genomic selection
+
+Genomic best linear unbiased prediction (gBLUP)
+
+compressed best linear unbiased prediction (cBLUP) 
+
+SUPER gBLUP
+
+
+
+

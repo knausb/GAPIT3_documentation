@@ -1,0 +1,65 @@
+
+
+##### ##### ##### ##### #####
+
+
+packageVersion("GAPIT3")
+ _NOT_ package_version()
+
+
+message() instead of print, cat, ...
+
+Move plotting functions out of analytical functions
+
+Omit "Timmer" and "Memory"
+
+
+##### ##### ##### ##### #####
+
+chor_taxa = as.character(unique(GM[,2]))
+chor_taxa = chor_taxa[order(as.numeric(as.character(chor_taxa)))]
+
+chromosome_names <- data.frame( chrom_name = paste("chrom", 1:6, sep = ""), chrom_number = 1:6)
+
+
+##### ##### ##### ##### #####
+
+Internal genetic data (genetic data is not exported):
+
+List of genetic data
+genetic_data
+@genotypes, variant by sample matrix (0, 1, 2)
+@positions, data.frame with rows equal to variant count (nrow(genotypes == nrow(positions))) three columns: variant_name, chromosome, position
+@positions == @variant_information
+
+@chromosomes, data.frame with rows equal to unique chromosome names and two columns: chromosome_name, chromosome_number
+
+##### ##### ##### ##### #####
+
+
+List
+
+@genetic_data
+@phenotype_data
+@kinship_matrix
+@Z
+@covariates
+@PCA: 'prcomp' (list)  @eigenvalues, @eigenvectors
+@LD
+@QTN???
+@Para??? - vector, groupings, misc parameters
+
+
+##### ##### ##### ##### #####
+
+
+SNP.QTN
+
+
+Z:
+
+GAPIT3/R/GAPIT.Main.R:378:    #Create Z as identity matrix from Y if it is not provided
+
+
+GAPIT3/R/GAPIT.CVMergePC.R:8:Z <- merge(X, Y, by.x = colnames(X)[1], by.y = colnames(Y)[1],sort=F)
+
