@@ -30,13 +30,13 @@ knitr::opts_chunk$set(fig.align = "center")
 
 
 $$
-y = s_{i} + \epsilon_{dnorm} 
+y_{i} = s_{i} + \epsilon_{ \mathcal{N}(0,\,\sigma^{2}) } 
 $$
 
 
 - $y$ is a vector of phenotypic measurements
 - $s_{i}$ genotypes
-- $\epsilon_{dnorm}$ is normally distributed error
+- $\epsilon_{ \mathcal{N}(0,\,\sigma^{2}) }$ is normally distributed error
 
 
 The t-test is not implemented in GAPIT3, but is provided as a conceptual starting point for the more complex models that are implemented in GAPIT3.
@@ -45,14 +45,14 @@ The t-test is a good starting point because the models implemented in GAPIT3 can
 
 ## GLM
 
-The **G**eneral **L**inear **M**odel (not to be confused with the generalized linear model)
+The **G**eneral **L**inear **M**odel [@lipka2012gapit] (not to be confused with the *generalized* linear model)
 
 $$
-y = s_{i} + Q + \epsilon_{dnorm} 
+y = s + Q + \epsilon_{ \mathcal{N}(0,\,\sigma^{2}) } 
 $$
 
 - $y$ is a vector of phenotypic measurements
-- $s_{i}$ genotypes
+- $s$ genotypes
 - $Q$ indicates population structure (a categorical indicator) 
 - $\epsilon_{dnorm}$ is normally distributed error
 
@@ -62,11 +62,11 @@ The $Q$ matrix may be obtained from clustering algorithms such as 'admixture', '
 
 ## MLM
 
-The **M**ixed **L**inear **M**odel
+The **M**ixed **L**inear **M**odel [@flint2005maize; @lipka2012gapit]
 
 
 $$
-y = s_{i} + Q + K + \epsilon_{dnorm} 
+y = s_{i} + Q + K + \epsilon_{ \mathcal{N}(0,\,\sigma^{2}) } \\
 $$
 
 - $y$ is a vector of phenotypic measurements
@@ -81,10 +81,10 @@ The MLM model is 'mixed' in that it incorporates 'fixed effects' (population str
 
 ## MLMM
 
-**M**ultiple **L**oci **M**ixed **M**odel
+**M**ultiple **L**oci **M**ixed **M**odel [@segura2012efficient]
 
 $$
-y = s_{i} + S + Q + K + \epsilon_{dnorm} 
+y = s_{i} + S + Q + K + \epsilon_{ \mathcal{N}(0,\,\sigma^{2}) } 
 $$
 
 - $y$ is a vector of phenotypic measurements
@@ -101,8 +101,12 @@ Uses forward and backward stepwise regression
 
 ## SUPER
 
+**S**ettlement of MLM **U**nder **P**rogressively **E**xclusive **R**elationship [@tang2016gapit].
+SUPER is an advanced version of FaST-Select [@wang2014super].
+
+
 $$
-y = s_{i} + Q + K + \epsilon_{dnorm} 
+y = s_{i} + Q + K + \epsilon_{ \mathcal{N}(0,\,\sigma^{2}) } 
 $$
 
 - $y$ is a vector of phenotypic measurements
@@ -125,11 +129,11 @@ The major difference between SUPER and FaST-Select is that SUPER uses bin approa
 
 ## FarmCPU
 
-Fixed and random model Circulating Probability Unification
+Fixed and random model Circulating Probability Unification [@liu2016iterative,]
 
 
 $$
-y = s_{i} + S + \epsilon_{dnorm} \\
+y = s_{i} + S + \epsilon_{ \mathcal{N}(0,\,\sigma^{2}) } \\
 y = K + \epsilon_{dnorm} 
 $$
 
@@ -147,12 +151,12 @@ random effect model iteratively
 ## BLINK
 
 
-Bayesian-information and Linkage-disequilibrium Iteratively Nested Keyway
+Bayesian-information and Linkage-disequilibrium Iteratively Nested Keyway [@huang2019blink]
 
 
 $$
-y = s_{i} + S + \epsilon_{dnorm} \\
-y = S + \epsilon_{dnorm} 
+y = s_{i} + S + \epsilon_{ \mathcal{N}(0,\,\sigma^{2}) } \\
+y = S + \epsilon_{ \mathcal{N}(0,\,\sigma^{2}) } 
 $$
 
 
@@ -167,7 +171,7 @@ BLINK approximates the maximum likelihood using Bayesian Information Content (BI
 
 Other major options
 
-**Compressed MLM (CMLM)** individuals are replaced by groups determined by statistical clustering.
+**Compressed MLM (CMLM)** individuals are replaced by groups determined by statistical clustering [@zhang2010mixed].
 
 The optimal compression level (group number) is determined by a series of mixed models.
 The user specifies the search range and interval (group.from, group.to and group.by).
@@ -185,18 +189,22 @@ In addition to implementing compression, GAPIT uses EMMAx/P3D1,17 to reduce comp
 If specified, the additive genetic (σ2a) and residual (σ2e) variance components will be estimated prior to conducting GWAS. 
 These estimates are then used for each SNP where a mixed model is fitted.
 
-
+EMMA [@kang2008efficient].
 
 
 
 
 ## Genomic selection
 
-Genomic best linear unbiased prediction (gBLUP)
+Genomic best linear unbiased prediction (gBLUP)    
+Compressed best linear unbiased prediction (cBLUP)    
+SUPER genomic best linear unbiased prediction (sBLUP)    
 
-compressed best linear unbiased prediction (cBLUP) 
 
-SUPER gBLUP
+___
+___
+
+# References
 
 
 
