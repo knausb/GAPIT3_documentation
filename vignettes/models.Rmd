@@ -26,6 +26,26 @@ knitr::opts_chunk$set(fig.align = "center")
 
 
 
+## Petit et al. 2020 notation
+
+[https://doi.org/10.3389/fgene.2020.566314](https://doi.org/10.3389/fgene.2020.566314)
+
+$$
+\gamma = X\alpha + K\beta + \epsilon
+$$
+
+
+- $\gamma$ is a vector of phenotypes
+- $X$ Is a vector of samples where each sample has been scored for a marker
+- $\alpha$ is a vector of effect size for the markers
+- $K$ is a matrix of kinships
+- $\beta$ 
+- $\epsilon_{ \mathcal{N}(0,\,\sigma^{2}) }$ is normally distributed error
+
+Fixed effects: $X, \alpha$    
+Random effects: $K, \beta$, and $\epsilon$
+
+
 ## T-test
 
 

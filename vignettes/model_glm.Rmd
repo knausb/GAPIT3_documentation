@@ -1,0 +1,103 @@
+---
+title: "GAPIT3 GLM model"
+author: "Brian J. Knaus"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Basic_example}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+bibliography: GAPIT3doc.bib
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+```{r setup, include=FALSE}
+#library(GAPIT3documentation)
+knitr::opts_chunk$set(fig.align = "center")
+```
+
+
+
+## GLM
+
+The **G**eneral **L**inear **M**odel [@lipka2012gapit] (not to be confused with the *generalized* linear model)
+
+$$
+y = s + Q + \epsilon_{ \mathcal{N}(0,\,\sigma^{2}) } 
+$$
+
+- $y$ is a vector of phenotypic measurements
+- $s$ genotypes
+- $Q$ indicates population structure (a categorical indicator) 
+- $\epsilon_{dnorm}$ is normally distributed error
+
+
+The $Q$ matrix may be obtained from clustering algorithms such as 'admixture', 'DAPC', 'kmeans', 'STRUCTURE', or '[fastSTRUCTURE](https://rajanil.github.io/fastStructure/).'
+
+
+## Example code
+
+
+```
+  myPhenoFile <- system.file("extdata", "mdp_traits.txt.gz",
+                             package = "GAPIT3")
+  myGenoFile <- system.file("extdata", "mdp_genotype_test.hmp.txt.gz",
+                            package = "GAPIT3")
+  
+  myPhenotypes <- read.table(myPhenoFile, header = TRUE)
+  myPhenotypes <- myPhenotypes[, 1:3]
+  myGenotypes  <- read.table(myGenoFile, header = FALSE)
+  
+  myGAPIT <- GAPIT( Y = myPhenotypes,
+                    G = myGenotypes,
+                    PCA.total = 3,
+#                    file.output = TRUE,
+                    file.output = FALSE,
+                    maxLoop = 1,
+                    model = "GLM"
+  )
+```
+
+
+## GAPIT flowchart
+
+
+* GAPIT() - manages multiple models, calls GAPIT.DP()
+  * GAPIT.DP() - doesn't much more than call GAPIT.Genotype(), omit.
+    * GAPIT.Genotype()
+      * GAPIT.kinship.*()
+  * GAPIT.Phenotype.View() - create graphic for one phenotypic trait
+  * GAPIT.Judge() - mostly catch inappropriate combinations of input
+  * GAPIT.IC() - Intermediate Components
+  * GAPIT.SS() - Sufficient Statistics, Z is created, stats::lm
+    * GAPIT.Main()
+  
+  
+  
+    * GAPIT.Bus() - Returens GWAS from GAPIT()
+      * GAPIT() <- is this recursion???
+
+
+## Returned files
+
+
+
+
+
+
+___
+___
+
+# References
+
+
+
+
